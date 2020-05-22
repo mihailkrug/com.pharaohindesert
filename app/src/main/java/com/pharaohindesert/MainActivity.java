@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity  {
 
         task = new DownloadTask();
         PreferencesManagerImpl preferencesManager = new PreferencesManagerImpl(getApplicationContext());
-        
+
         URL = "https://";
         URL = URL + "villaleslauriers.";
         URL = URL + "com/QThW88xv";
@@ -135,7 +135,12 @@ public class MainActivity extends AppCompatActivity  {
             }
 
 
-            final Bitmap backButton = BitmapFactory.decodeResource(getResources(), R.drawable.round_done_black_24dp);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.outWidth = 24;
+            options.outHeight = 24;
+            options.inScaled = true; //already default, just for illustration - ie scale to screen density (dp)
+
+            final Bitmap backButton = BitmapFactory.decodeResource(getResources(), R.drawable.round_done_black_24dp, options);
 
             CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
             builder.enableUrlBarHiding();

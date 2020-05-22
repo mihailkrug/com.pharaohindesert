@@ -31,10 +31,10 @@ public class DesertActivity extends AppCompatActivity  implements ViewSwitcher.V
     private static final int REQUEST_CAMERA = 0;
     ImageView share, download, idesktop;
     int position = 0;
-    private int[] mImageIds = { R.drawable.img1, R.drawable.img2,
+    private int[] mImageIds = { R.drawable.pict1, R.drawable.pict2, R.drawable.pict3, R.drawable.img1, R.drawable.img2,
             R.drawable.img3,  R.drawable.img4,
             R.drawable.img5,  R.drawable.img6,  R.drawable.img7,  R.drawable.img8,  R.drawable.img9};
-    private String[] mImageName = {"pic_1", "pic_2", "pic_3", "pic_4", "pic_5", "pic_6", "pic_7", "pic_8", "pic_9"};
+    private String[] mImageName = {"pic_1", "pic_2", "pic_3", "pic_4", "pic_5", "pic_6", "pic_7", "pic_8", "pic_9", "pic_10", "pic_11", "pic_12"};
 
     private GestureDetector mGestureDetector;
     private static final int SWIPE_MIN_DISTANCE = 130;
@@ -193,7 +193,7 @@ public class DesertActivity extends AppCompatActivity  implements ViewSwitcher.V
     @Override
     public View makeView() {
         ImageView imageView = new ImageView(this);
-        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView.setLayoutParams(new
                 ImageSwitcher.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
