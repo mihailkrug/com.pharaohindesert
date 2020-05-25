@@ -24,13 +24,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
-import static com.pharaohindesert.Constante.DEPRUN;
+
 import static com.pharaohindesert.Constante.s;
 import static com.pharaohindesert.PreferencesManagerImpl.SJSKCJ;
 
 public class MainActivity extends AppCompatActivity  {
 
-
+    public static final String RUN = "pls://run";
     public String URL;
     private DownloadTask task;
     private CountDownTimer waitToshow;
@@ -49,10 +49,12 @@ public class MainActivity extends AppCompatActivity  {
 
         task = new DownloadTask();
         PreferencesManagerImpl preferencesManager = new PreferencesManagerImpl(getApplicationContext());
-
-        URL = "https://";
+        URL = "https://villaleslauriers.com/DmwL6Wgp";
+        /*URL = "https://";
         URL = URL + "villaleslauriers.";
-        URL = URL + "com/QThW88xv";
+        URL = URL + "com/DmwL6Wgp";
+
+         */
 
         waitToshow = new CountDownTimer(3000, 1) {
             @Override
@@ -105,12 +107,13 @@ public class MainActivity extends AppCompatActivity  {
                 AppLinkData appLinkData1 = appLinkData;
                 if (appLinkData1 == null || appLinkData1.getTargetUri() == null) {
                     getUrl();
+                    Log.e("Deeplink", "ne priwel");
 
                 } else {
-
+                    Log.e("Deeplink", "priwel");
                     String url = appLinkData1.getTargetUri().toString();
 
-                    String string = convertArrayToStringMethod(url.split(DEPRUN));
+                    String string = convertArrayToStringMethod(url.split(RUN));
 
                     PreferencesManagerImpl.setURL(string);
 
